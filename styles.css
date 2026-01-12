@@ -98,7 +98,7 @@ li {
 }
 
 .btn__menu {
-    display: block;
+    display: none;
     background-color: transparent;
     font-size: 24px;
     text-align: center;
@@ -108,7 +108,7 @@ li {
 }
 
 .menu__backdrop {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -118,12 +118,20 @@ li {
     background-color: #fff;
     border: 1px solid rgb(229, 231, 235);
     border-radius: 8px;
-    z-index: 4;
+    z-index: 100;
     display: flex;
+    justify-content: center;
+    align-items: center;
     visibility: hidden;
     opacity: 0;
     transform: translateX(300%);
     transition: all 300ms ease;
+}
+
+.menu--open .menu__backdrop {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
 }
 
 .menu__links {
@@ -154,7 +162,7 @@ li {
     border: none;
 }
 
-.btn__menu--close {
+.menu--close {
     position: absolute;
     top: 24px;
     right: 18px;
@@ -1219,18 +1227,20 @@ p {
     }
 
     .btn__menu {
+        display: block;
         visibility: visible;
+        color: #1a202c;
     }
 
     .btn__menu:hover {
         cursor: pointer;
+        color: #6415ff;
     }
 
-    .menu__backdrop {
-        display: flex;
-        visibility: visible;
+    body.menu--open .menu__backdrop {
+        transform: translateX(0);
         opacity: 1;
-        transform: translateX(-300%);
+        visibility: visible;
     }
 
     .header__container {
