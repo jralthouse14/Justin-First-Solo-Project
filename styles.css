@@ -20,6 +20,11 @@ nav {
     padding: 16px
 }
 
+.logo__img {
+    display: flex;
+    align-items: center;
+}
+
 .logo__title {
     letter-spacing: 0.75px;
     font-size: 24px;
@@ -937,9 +942,10 @@ p {
 
 .arrow {
     display: flex;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    padding: 4px 12px;
+    padding: 8px 16px;
     background: #edf2f7;
     color: rgb(100, 21, 255);
     border-radius: 50%;
@@ -1229,6 +1235,7 @@ p {
     .btn__menu {
         display: block;
         visibility: visible;
+        margin-right: 32px;
         color: #1a202c;
     }
 
@@ -1241,6 +1248,12 @@ p {
         transform: translateX(0);
         opacity: 1;
         visibility: visible;
+    }
+
+    #email,
+    .header__email--btn {
+        width: 180%;
+        margin-left: 100px;
     }
 
     .header__container {
@@ -1320,5 +1333,38 @@ p {
     .copyright__message {
         margin-top: 2px;
         margin-bottom: 8px;
+    }
+}
+
+/* SMALLER PHONES */
+@media (max-width: 550px) {
+    .header__description,
+    .header__description--para,
+    #features {
+        width: 90%;
+    }
+
+    #email,
+    .header__email--btn {
+        width: 100%;
+        padding: 14px;
+    }
+
+    #features {
+        margin-left: 16px;
+    }
+
+    .features__header,
+    .quality__header,
+    .pricing__header,
+    .steps__header,
+    .values__header,
+    .testimonial__header {
+        font-size: 40px;
+    }
+
+    .start__button,
+    .start__contact {
+        padding: 12px 40px;
     }
 }
